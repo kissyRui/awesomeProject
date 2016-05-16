@@ -4,19 +4,11 @@
  */
 'use strict';
 
-var Login = require('./views/practice/login');
+import React from 'react-native';
+import Root from './app/root';
 
-import React, {
-  AppRegistry,
-  Component
-} from 'react-native';
+const {
+    AppRegistry
+} = React;
 
-class App extends Component {
-  render() {
-    return (
-      <Login/>
-    );
-  }
-}
-
-AppRegistry.registerComponent('App', () => App);
+AppRegistry.registerComponent('App', () => Root);

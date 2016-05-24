@@ -10,15 +10,18 @@ import React, {
     Alert,
     Modal,
     PixelRatio,
-    TouchableOpacity
+    TouchableOpacity,
+    TouchableHighlight
 } from 'react-native';
 
 class Login extends Component {
 
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
-        };
+            mobile: '',
+            vcode: ''
+        }
     }
 
     render() {
@@ -41,6 +44,7 @@ class Login extends Component {
                             underlineColorAndroid="rgba(0,0,0,0)"
                             style={styles.field_input_item}
                             placeholder="请输入手机号"
+                            value={this.state.mobile}
                             defaultValue="" />
                     </View>
                     <TouchableOpacity style={styles.field_button}>
@@ -56,9 +60,16 @@ class Login extends Component {
                             underlineColorAndroid="rgba(0,0,0,0)"
                             style={styles.field_input_item}
                             placeholder="请输入验证码"
+                            value={this.state.vcode}
                             defaultValue="" />
                     </View>
                 </View>
+                <View style={styles.ui_tip}>
+                    <Text style={styles.ui_tip_text}>验证成功后，无需绑定账号，该手机号已绑定的盛大通行证账号、手游账号自动与微信绑定。</Text>
+                </View>
+                <TouchableHighlight style={styles.ui_button} underlayColor="#36aaf1" activeOpacity={0.5}>
+                    <Text style={styles.ui_button_text}>下一步</Text>
+                </TouchableHighlight>
             </View>
         );
     }
@@ -128,6 +139,31 @@ const styles = StyleSheet.create({
             height: 1,
             borderBottomColor: '#d9d9d9',
             borderBottomWidth: 1
+        },
+        ui_tip: {
+            margin: 15
+        },
+        ui_tip_text: {
+            color: '#8b8b8b',
+            fontSize: 13,
+            lineHeight: 26
+        },
+        ui_button: {
+            marginTop: 20,
+            flex: 1,
+            height: 44,
+            marginLeft: 15,
+            marginRight: 15,
+            flexDirection: 'row',
+            backgroundColor: '#1e9deb',
+            alignSelf: 'stretch',
+            borderRadius: 4,
+            justifyContent: 'center'
+        },
+        ui_button_text: {
+            color: '#FFF',
+            alignSelf: 'center',
+            fontSize: 18
         }
     }
 );

@@ -16,16 +16,13 @@ class Link extends Component {
 
         const { active, children, onClick } = this.props
 
-        if (active) {
-            return <View style={styles.link}>{children}</View>
-        }
         return (
-            <TouchableOpacity style={styles.link} onPress={e => {
+            !active ? <TouchableOpacity style={styles.link} onPress={e => {
                 e.preventDefault()
                 onClick()
             }}>
             {children}
-            </TouchableOpacity>
+            </TouchableOpacity> : <View style={[styles.link, styles.link_cur]}>{children}</View>
         )
     }
 
@@ -35,9 +32,12 @@ const styles = StyleSheet.create({
     link: {
         flex: 1,
         height: 40,
-        backgroundColor: '#08C',
+        backgroundColor: '#FFF',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    link_cur: {
+        backgroundColor: '#DDD',
     }
 })
 

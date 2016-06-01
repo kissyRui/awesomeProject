@@ -1,5 +1,5 @@
 {
-  "name": "rn菜鸟试验田",
+  "name": "rn",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "immutable": "^3.8.1",
-    "react-native": "^0.19.0",
+    "react-native": "^0.20.0",
     "react-native-scrollable-tab-view": "^0.4.2",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",

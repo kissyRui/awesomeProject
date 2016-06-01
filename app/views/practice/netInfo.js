@@ -16,7 +16,7 @@ class NetState extends Component {
             isConnected: null
         };
         // bind处理方式
-        // this._handleConnectivityChange = this._handleConnectivityChange.bind(this)
+        this._handleConnectivityChange = this._handleConnectivityChange.bind(this)
     }
 
     componentWillUnmount() {
@@ -40,7 +40,7 @@ class NetState extends Component {
         );
     }
 
-    _handleConnectivityChange = (isConnected) => {
+    _handleConnectivityChange(isConnected) {
         this.setState({
           isConnected
         });

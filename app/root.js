@@ -1,8 +1,12 @@
 import React from 'react-native';
-
 import Login from './views/practice/login';
-// import Camera from './views/practice/camera';
-// import Webview from './views/practice/webview';
+
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import todoApp from './reducers';
+import App from './components/App'
+
+let store = createStore(todoApp);
 
 const {
   Component
@@ -11,7 +15,9 @@ const {
 class Root extends Component {
   render() {
     return (
-      <Login />
+        <Provider store={store}>
+            <App />
+        </Provider>
     );
   }
 }

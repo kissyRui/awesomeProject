@@ -1,16 +1,14 @@
-import React from 'react-native';
-import Login from './views/practice/login';
-
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import todoApp from './reducers';
+import React from 'react-native'
+import Login from './views/practice/login'
+import { Provider } from 'react-redux'
 import App from './components/App'
+import configureStore from './store/configure-store'
 
-let store = createStore(todoApp);
+const store = configureStore()
 
 const {
   Component
-} = React;
+} = React
 
 class Root extends Component {
   render() {
@@ -18,8 +16,8 @@ class Root extends Component {
         <Provider store={store}>
             <App />
         </Provider>
-    );
+    )
   }
 }
 
-export default Root;
+export default Root

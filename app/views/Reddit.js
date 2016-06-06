@@ -9,7 +9,7 @@ class Reddit extends Component {
     render() {
         return (
             <View style={styles.main}>
-                <Text>Reddit</Text>
+                <Text>Reddit it</Text>
             </View>
         )
     }

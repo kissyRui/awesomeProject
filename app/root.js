@@ -8,10 +8,10 @@ import configureStore from './store/configure-store'
 const store = configureStore()
 
 const {
-  Component,
-  Navigator,
-  BackAndroid
-} = React
+    Component,
+    Navigator,
+    BackAndroid
+    } = React
 
 class Root extends Component {
 
@@ -26,10 +26,10 @@ class Root extends Component {
     };
 
     _renderScene = (router, navigator) => {
-         let PageComponent = null
-         this._navigator = navigator
+        let PageComponent = null
+        this._navigator = navigator
 
-         switch(router.id) {
+        switch (router.id) {
             case 'Todos':
                 PageComponent = Todos
                 break
@@ -38,20 +38,20 @@ class Root extends Component {
                 break
             default:
                 PageComponent = Todos
-         }
+        }
 
-         return <PageComponent navigator={navigator} />
+        return <PageComponent navigator={navigator}/>
     };
 
     componentDidMount() {
-          let navigator = this._navigator
-          BackAndroid.addEventListener('hardwareBackPress', () => {
-              if (navigator && navigator.getCurrentRoutes().length > 1) {
+        let navigator = this._navigator
+        BackAndroid.addEventListener('hardwareBackPress', () => {
+            if (navigator && navigator.getCurrentRoutes().length > 1) {
                 navigator.pop()
                 return true
-              }
-              return false
-          })
+            }
+            return false
+        })
     }
 
     componentWillUnmount() {
@@ -64,7 +64,7 @@ class Root extends Component {
                 <Navigator
                     initialRoute={{id: 'Reddit'}}
                     configureScene={this._configureScene}
-                    renderScene={this._renderScene} />
+                    renderScene={this._renderScene}/>
             </Provider>
         )
     }

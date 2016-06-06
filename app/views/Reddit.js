@@ -5,17 +5,11 @@ import React, {
     Component
 } from 'react-native'
 
-import AddTodo from '../containers/AddTodo'
-import VisibleTodoList from '../containers/VisibleTodoList'
-import Searcher from './Searcher'
-
-class App extends Component {
+class Reddit extends Component {
     render() {
         return (
             <View style={styles.main}>
-                <AddTodo/>
-                <Searcher/>
-                <VisibleTodoList />
+                <Text>Reddit</Text>
             </View>
         )
     }
@@ -27,4 +21,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default App
+export default Reddit

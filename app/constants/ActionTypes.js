@@ -7,5 +7,9 @@ export default keyMirror({
 
     'SHOW_ALL': null,
     'SHOW_ACTIVE': null,
-    'SHOW_COMPLETED': null
+    'SHOW_COMPLETED': null,
+
+    'SELECT_REDDIT': null,
+    'RECEIVE_POSTS': null,
+    'REQUEST_POSTS': null
 })

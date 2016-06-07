@@ -22,9 +22,9 @@ class Posts extends Component {
 
         return (
             <View style={styles.todo_item}>
-            {
-                posts.map((post, i) => <Text key={i}>{post.title}</Text>)
-            }
+                {
+                    posts.map((post, i) => <Text key={i}>{post.title}</Text>)
+                }
             </View>
         )
 

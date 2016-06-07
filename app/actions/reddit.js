@@ -3,6 +3,7 @@
  */
 
 import ActionTypes from '../constants/ActionTypes'
+import APIs from '../apis/serverAPI'
 
 // 选择Reddit
 export const selectReddit = (reddit) => {
@@ -31,7 +32,7 @@ const receivePosts = (reddit, json) => {
 const fetchPosts = (reddit) => {
     return dispatch => {
         dispatch(requestPosts(reddit))
-        return fetch(`http://h5.becomingjenny.net/${reddit}.json`)
+        return fetch(APIs.reddit(reddit))
             .then(response => response.json())
             .then(json => dispatch(receivePosts(reddit, json)))
     }

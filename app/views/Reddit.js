@@ -44,9 +44,16 @@ class Reddit extends Component {
 
         return (
             <View style={styles.main}>
+
                 <UIPicker value={selectedReddit}
                           onChange={this._handleChange}
                           options={[ 'reactjs', 'frontend' ]} />
+                {
+                    lastUpdated &&
+                        <Text style={styles.statusTime}>
+                            Last updated at {new Date(lastUpdated).toLocaleTimeString()}.{' '}
+                        </Text>
+                }
                 {
                     isEmpty
                         ? (isFetching ? <View><Text>Loading...</Text></View> : <View><Text>Empty.</Text></View>)
@@ -61,6 +68,11 @@ class Reddit extends Component {
 const styles = StyleSheet.create({
     main: {
         flexDirection: 'column'
+    },
+    statusTime: {
+        color: 'red',
+        fontSize: 14,
+        margin: 5
     }
 })
 

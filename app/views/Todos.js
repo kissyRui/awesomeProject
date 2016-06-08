@@ -5,7 +5,7 @@ import React, {
     Component
 } from 'react-native'
 
-import AddTodo from '../containers/AddTodo'
+import AddTodoContainer from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import Searcher from '../components/Searcher'
 
@@ -13,7 +13,7 @@ class Todos extends Component {
     render() {
         return (
             <View style={styles.main}>
-                <AddTodo/>
+                <AddTodoContainer/>
                 <Searcher/>
                 <VisibleTodoList />
             </View>

@@ -7,6 +7,12 @@ import configureStore from './store/configure-store'
 
 const store = configureStore()
 
+//store.dispatch({
+//    type: 'ADD_TODO',
+//    text: 'Read the docs'
+//})
+//console.log(store.getState())
+
 const {
     Component,
     Navigator,
@@ -62,7 +68,7 @@ class Root extends Component {
         return (
             <Provider store={store}>
                 <Navigator
-                    initialRoute={{id: 'Reddit'}}
+                    initialRoute={{id: 'Todos'}}
                     configureScene={this._configureScene}
                     renderScene={this._renderScene}/>
             </Provider>

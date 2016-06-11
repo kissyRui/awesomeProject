@@ -6,7 +6,7 @@ import React, {
     StyleSheet
 } from 'react-native'
 
-import FilterLink from '../containers/FilterLink'
+import FilterLinkContainer from '../containers/FilterLinkContainer'
 
 class Searcher extends Component {
 
@@ -15,17 +15,18 @@ class Searcher extends Component {
     }
 
     render() {
+
         return (
             <View style={styles.links_wrapper}>
-                <FilterLink style={styles.links_item} filter="SHOW_ALL">
+                <FilterLinkContainer style={styles.links_item} filter="SHOW_ALL">
                     <Text style={styles.link_text}>所有</Text>
-                </FilterLink>
-                <FilterLink style={styles.links_item} filter="SHOW_ACTIVE">
+                </FilterLinkContainer>
+                <FilterLinkContainer style={styles.links_item} filter="SHOW_ACTIVE">
                     <Text style={styles.link_text}>未完成</Text>
-                </FilterLink>
-                <FilterLink style={styles.links_item} filter="SHOW_COMPLETED">
+                </FilterLinkContainer>
+                <FilterLinkContainer style={styles.links_item} filter="SHOW_COMPLETED">
                     <Text style={styles.link_text}>完成</Text>
-                </FilterLink>
+                </FilterLinkContainer>
             </View>
         )
     }

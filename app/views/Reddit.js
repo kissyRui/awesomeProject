@@ -7,19 +7,15 @@ import React, {
 } from 'react-native'
 
 import { connect } from 'react-redux'
-import { selectReddit, fetchPostsIfNeeded } from '../actions/reddit'
-import UIPicker from '../components/UIPicker'
+import { fetchPostsIfNeeded } from '../actions/reddit'
 import Posts from '../components/Posts'
+import SelectedRedditContainer from '../containers/SelectedRedditContainer'
 
 class Reddit extends Component {
 
     constructor(props) {
         super(props)
     }
-
-    _handleChange = (nextReddit) => {
-        this.props.dispatch(selectReddit(nextReddit))
-    };
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.selectedReddit !== this.props.selectedReddit) {
@@ -38,16 +34,15 @@ class Reddit extends Component {
 
     render() {
 
-        const { selectedReddit, posts, isFetching, lastUpdated } = this.props
+        const { posts, isFetching, lastUpdated } = this.props
 
         const isEmpty = posts.length === 0
 
         return (
             <View style={styles.main}>
 
-                <UIPicker value={selectedReddit}
-                          onChange={this._handleChange}
-                          options={[ 'reactjs', 'frontend' ]} />
+                <SelectedRedditContainer />
+
                 {
                     lastUpdated &&
                         <Text style={styles.statusTime}>
@@ -77,7 +72,6 @@ const styles = StyleSheet.create({
 })
 
 Reddit.propTypes = {
-    selectedReddit: PropTypes.string.isRequired,
     posts: PropTypes.array.isRequired,
     isFetching: PropTypes.bool.isRequired,
     lastUpdated: PropTypes.number,

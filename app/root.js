@@ -68,7 +68,7 @@ class Root extends Component {
         return (
             <Provider store={store}>
                 <Navigator
-                    initialRoute={{id: 'Todos'}}
+                    initialRoute={{id: 'Reddit'}}
                     configureScene={this._configureScene}
                     renderScene={this._renderScene}/>
             </Provider>

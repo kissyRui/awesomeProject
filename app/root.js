@@ -3,7 +3,10 @@ import Login from './views/practice/login'
 import { Provider } from 'react-redux'
 import Todos from './views/Todos'
 import Reddit from './views/Reddit'
+import ShoppingCart from './views/ShoppingCart'
 import configureStore from './store/configure-store'
+
+import { getAllProducts } from './actions/shoppingCart'
 
 const store = configureStore()
 
@@ -12,6 +15,8 @@ const store = configureStore()
 //    text: 'Read the docs'
 //})
 //console.log(store.getState())
+
+store.dispatch(getAllProducts())
 
 const {
     Component,
@@ -42,6 +47,9 @@ class Root extends Component {
             case 'Reddit':
                 PageComponent = Reddit
                 break
+            case 'ShoppingCart':
+                PageComponent = ShoppingCart
+                break
             default:
                 PageComponent = Todos
         }
@@ -68,7 +76,7 @@ class Root extends Component {
         return (
             <Provider store={store}>
                 <Navigator
-                    initialRoute={{id: 'Reddit'}}
+                    initialRoute={{id: 'ShoppingCart'}}
                     configureScene={this._configureScene}
                     renderScene={this._renderScene}/>
             </Provider>

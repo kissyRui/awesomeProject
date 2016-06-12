@@ -11,5 +11,9 @@ export default keyMirror({
 
     'SELECT_REDDIT': null,
     'RECEIVE_POSTS': null,
-    'REQUEST_POSTS': null
+    'REQUEST_POSTS': null,
+
+    'REQUEST_PRODUCTS': null,
+    'RECEIVE_PRODUCTS': null,
+    'ADD_TO_CART': null
 })

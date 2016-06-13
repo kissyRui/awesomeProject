@@ -31,7 +31,6 @@ class Product extends Component {
 const styles = StyleSheet.create({
     product: {
         flex: 1,
-        height: 52,
         paddingLeft: 15,
         justifyContent: 'center'
     }

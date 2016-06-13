@@ -11,6 +11,7 @@ import React, {
 import { connect } from 'react-redux'
 
 import ProductsContainer  from '../containers/ProductsContainer'
+import CartContainer from '../containers/CartContainer'
 
 class ShoppingCart extends Component {
 
@@ -18,6 +19,7 @@ class ShoppingCart extends Component {
         return (
             <View style={styles.main}>
                 <ProductsContainer />
+                <CartContainer />
             </View>
         )
     }

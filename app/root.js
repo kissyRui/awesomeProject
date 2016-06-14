@@ -7,6 +7,7 @@ import ShoppingCart from './views/ShoppingCart'
 import configureStore from './store/configure-store'
 
 import { getAllProducts } from './actions/shoppingCart'
+import StatusBarIOS from './components/StatusBarIOS'
 
 const store = configureStore()
 
@@ -21,7 +22,9 @@ store.dispatch(getAllProducts())
 const {
     Component,
     Navigator,
-    BackAndroid
+    View,
+    BackAndroid,
+    StyleSheet
     } = React
 
 class Root extends Component {
@@ -75,13 +78,22 @@ class Root extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Navigator
-                    initialRoute={{id: 'Todos'}}
-                    configureScene={this._configureScene}
-                    renderScene={this._renderScene}/>
+                <View style={styles.container}>
+                    <StatusBarIOS barStyle="light-content"/>
+                    <Navigator
+                        initialRoute={{id: 'ShoppingCart'}}
+                        configureScene={this._configureScene}
+                        renderScene={this._renderScene} />
+                </View>
             </Provider>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    }
+})
 
 export default Root

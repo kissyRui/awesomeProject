@@ -7,7 +7,8 @@ import ShoppingCart from './views/ShoppingCart'
 import configureStore from './store/configure-store'
 
 import { getAllProducts } from './actions/shoppingCart'
-import StatusBarIOS from './components/StatusBarIOS'
+import CustomStatusBarIOS from './components/CustomStatusBarIOS'
+import TabBarView from './common/TabBarView'
 
 const store = configureStore()
 
@@ -36,14 +37,15 @@ class Root extends Component {
     }
 
     _configureScene = (route) => {
-        return Navigator.SceneConfigs.FadeAndroid
+        //return Navigator.SceneConfigs.FadeAndroid
+        return  Navigator.SceneConfigs.PushFromRight
     };
 
     _renderScene = (router, navigator) => {
         let PageComponent = null
         this._navigator = navigator
 
-        switch (router.id) {
+        switch (router.name) {
             case 'Todos':
                 PageComponent = Todos
                 break
@@ -57,7 +59,7 @@ class Root extends Component {
                 PageComponent = Todos
         }
 
-        return <PageComponent navigator={navigator}/>
+        return <PageComponent route = {router} navigator={navigator}/>
     };
 
     componentDidMount() {
@@ -79,11 +81,16 @@ class Root extends Component {
         return (
             <Provider store={store}>
                 <View style={styles.container}>
-                    <StatusBarIOS barStyle="light-content"/>
+                    <CustomStatusBarIOS barStyle="light-content"/>
                     <Navigator
-                        initialRoute={{id: 'ShoppingCart'}}
-                        configureScene={this._configureScene}
-                        renderScene={this._renderScene} />
+                        initialRoute={{name: 'TabBarView', component: TabBarView }}
+                        configureScene={ this._configureScene }
+                        renderScene={(route, navigator) => {
+                            let Component = route.component
+                            return (
+                                <Component navigator={navigator} route = {route} {...route.passProps} />
+                            )
+                        }} />
                 </View>
             </Provider>
         )

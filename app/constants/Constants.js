@@ -3,7 +3,7 @@
  */
 
 let colors = {
-    themeColor: 'rgb(217, 51, 58)'
+    themeColor: 'rgb(0, 0, 0)'
 }
 
 export default {

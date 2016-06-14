@@ -10,7 +10,7 @@ import React, {
 
 import Constants from '../constants/Constants'
 
-class StatusBarIOS extends Component {
+class CustomStatusBarIOS extends Component {
 
     render() {
         return (
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default StatusBarIOS
+export default CustomStatusBarIOS

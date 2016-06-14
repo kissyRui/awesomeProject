@@ -76,7 +76,7 @@ class Root extends Component {
         return (
             <Provider store={store}>
                 <Navigator
-                    initialRoute={{id: 'ShoppingCart'}}
+                    initialRoute={{id: 'Todos'}}
                     configureScene={this._configureScene}
                     renderScene={this._renderScene}/>
             </Provider>

@@ -3,6 +3,7 @@
  */
 import ActionTypes from '../constants/ActionTypes'
 import APIs from '../apis/serverAPI'
+import Util from '../utils/utils'
 
 const requestProducts = () => {
     return {
@@ -21,10 +22,15 @@ const receiveProducts = (products) => {
 
 export const getAllProducts = () => {
     return dispatch => {
-         dispatch(requestProducts())
-        return fetch(APIs.cartList())
-            .then(response => response.json())
-            .then(json => dispatch(receiveProducts(json)))
+        dispatch(requestProducts())
+        Util.get(APIs.cartList(), (json) => {
+            dispatch(receiveProducts(json))
+        }, (error) => {
+            // dispatch(receiveProducts({}))
+        })
+        //return fetch(APIs.cartList())
+        //    .then(response => response.json())
+        //    .then(json => dispatch(receiveProducts(json)))
     }
 }
 

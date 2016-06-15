@@ -32,7 +32,7 @@ class UIPicker extends Component {
             <View>
                 <Picker
                     prompt="请选择编程语言"
-                    mode={"dropdown"}
+                    mode={"dialog"}
                     style={{flex:1}}
                     selectedValue={value}
                     onValueChange={(value) => onChange(value)}>

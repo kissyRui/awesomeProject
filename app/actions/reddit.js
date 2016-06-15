@@ -4,6 +4,7 @@
 
 import ActionTypes from '../constants/ActionTypes'
 import APIs from '../apis/serverAPI'
+import Util from '../utils/utils'
 
 // 选择Reddit
 export const selectReddit = (reddit) => {
@@ -24,7 +25,7 @@ const receivePosts = (reddit, json) => {
     return {
         type: ActionTypes.RECEIVE_POSTS,
         reddit,
-        posts: json.data.children.map(child => child.data),
+        posts: json.data.map(child => child.data),
         receivedAt: Date.now()
     }
 }
@@ -32,9 +33,12 @@ const receivePosts = (reddit, json) => {
 const fetchPosts = (reddit) => {
     return dispatch => {
         dispatch(requestPosts(reddit))
-        return fetch(APIs.reddit(reddit))
-            .then(response => response.json())
-            .then(json => dispatch(receivePosts(reddit, json)))
+        Util.get(APIs.reddit(reddit), (json) => {
+            dispatch(receivePosts(reddit, json))
+        }, (error) => {
+            // dispatch(receivePosts(reddit, {}))
+        })
+
     }
 }
 

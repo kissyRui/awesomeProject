@@ -28,7 +28,7 @@ class AddTodo extends Component {
             <View style={styles.field_wrap}>
                 <View style={styles.field_input}>
                     <TextInput
-                        autoFocus={true}
+                        //autoFocus={true}
                         underlineColorAndroid="rgba(0,0,0,0)"
                         style={styles.field_input_item}
                         placeholder="请输入待办事项"

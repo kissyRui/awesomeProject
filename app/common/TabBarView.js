@@ -11,13 +11,13 @@ import Todos from '../views/Todos'
 import Reddit from '../views/Reddit'
 import ShoppingCart from '../views/ShoppingCart'
 import Constants from '../constants/Constants'
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 // TabBar Items
 const tabBarItems = [
     {
         title: 'Todos',
-        icon: 'home',
+        icon: 'check',
         component: Todos
     },
     {
@@ -27,7 +27,7 @@ const tabBarItems = [
     },
     {
         title: 'ShoppingCart',
-        icon: 'star',
+        icon: 'bed',
         component: ShoppingCart
     }
 ]

@@ -9,6 +9,8 @@ import React, {
     StyleSheet
 } from 'react-native'
 
+import constants from '../constants/Constants'
+
 class ProductsList extends Component {
 
     constructor(props) {
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
     productTitle: {
         flex: 1,
         height: 40,
-        backgroundColor: '#1e9deb',
+        backgroundColor: constants.colors.themeColor,
         justifyContent: 'center',
         alignItems: 'center'
     },

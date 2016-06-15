@@ -11,6 +11,7 @@ import React, {
 } from 'react-native'
 
 import Product from './Product'
+import constants from '../constants/Constants'
 
 class ProductItem extends Component {
 
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     },
 
     addButtonText: {
-        color: '#1e9deb',
+        color: constants.colors.themeColor,
         fontSize: 14
     }
 })

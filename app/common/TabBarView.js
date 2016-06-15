@@ -17,17 +17,17 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 const tabBarItems = [
     {
         title: 'Todos',
-        icon: 'heart',
+        icon: 'home',
         component: Todos
     },
     {
         title: 'Reddit',
-        icon: 'heart',
+        icon: 'book',
         component: Reddit
     },
     {
         title: 'ShoppingCart',
-        icon: 'heart',
+        icon: 'star',
         component: ShoppingCart
     }
 ]
@@ -48,9 +48,11 @@ class TabBarView extends Component {
                     tabBarItems.map((item, i) => {
                             let Component = item.component
                             return (
-                                <TabBarIOS.Item
+                                <FontAwesome.TabBarItem
                                     key={i}
                                     title={item.title}
+                                    iconName={item.icon}
+                                    selectedIconName={item.icon}
                                     selected={this.state.selectedTab === item.title}
                                     onPress={() => {
                                     this.setState({
@@ -58,7 +60,7 @@ class TabBarView extends Component {
                                     })
                                 }}>
                                     <Component navigator={this.props.navigator} {...this.props}/>
-                                </TabBarIOS.Item>
+                                </FontAwesome.TabBarItem>
                             )
                         }
                     )

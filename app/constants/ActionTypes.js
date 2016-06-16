@@ -15,5 +15,9 @@ export default keyMirror({
 
     'REQUEST_PRODUCTS': null,
     'RECEIVE_PRODUCTS': null,
-    'ADD_TO_CART': null
+    'ADD_TO_CART': null,
+
+    // ----- 食物派App -----
+    'FETCH_BANNER_LIST': null,
+    'RECEIVE_BANNER_LIST': null
 })

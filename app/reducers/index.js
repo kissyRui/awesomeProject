@@ -2,9 +2,9 @@ import { combineReducers } from 'redux';
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
 import { selectedReddit, postsByReddit } from './reddit'
-
 import products, * as fromProducts from './products'
 import cart, * as fromCart from './cart'
+import strolling from './strollingReducer'
 
 const rootReducers = combineReducers({
     todos,
@@ -12,7 +12,8 @@ const rootReducers = combineReducers({
     selectedReddit,
     postsByReddit,
     products,
-    cart
+    cart,
+    strolling
 });
 
 function getAddedIds(state) {

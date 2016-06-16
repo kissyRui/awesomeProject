@@ -20,6 +20,9 @@ const store = configureStore()
 
 store.dispatch(getAllProducts())
 
+//import { fetchBanners } from './actions/strollingActions'
+//store.dispatch(fetchBanners())
+
 const {
     Component,
     Navigator,

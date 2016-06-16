@@ -7,7 +7,7 @@ import React, {
     TabBarIOS
 } from 'react-native'
 
-import Todos from '../views/Todos'
+import StrollingContainer from '../containers/StrollingContainer'
 import Reddit from '../views/Reddit'
 import ShoppingCart from '../views/ShoppingCart'
 import Constants from '../constants/Constants'
@@ -16,9 +16,9 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 // TabBar Items
 const tabBarItems = [
     {
-        title: 'Todos',
-        icon: 'check',
-        component: Todos
+        title: '逛吃',
+        icon: 'home',
+        component: StrollingContainer
     },
     {
         title: 'Reddit',

@@ -7,7 +7,7 @@ import ShoppingCart from './views/ShoppingCart'
 import configureStore from './store/configure-store'
 
 import { getAllProducts } from './actions/shoppingCart'
-import CustomStatusBarIOS from './components/CustomStatusBarIOS'
+import CustomStatusBarIOS from './common/CustomStatusBarIOS'
 import TabBarView from './common/TabBarView'
 
 const store = configureStore()
@@ -22,6 +22,9 @@ store.dispatch(getAllProducts())
 
 //import { fetchBanners } from './actions/strollingActions'
 //store.dispatch(fetchBanners())
+
+//import { fetchFeeds } from './actions/strollingActions'
+//store.dispatch(fetchFeeds())
 
 const {
     Component,

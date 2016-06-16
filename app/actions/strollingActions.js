@@ -32,3 +32,34 @@ export let fetchBanners = () => {
         })
     }
 }
+
+let fetchFeedList = (isLoadMore, isRefreshing, isLoading) => {
+    return {
+        type: ActionTypes.FETCH_FEED_LIST,
+        isLoadMore,
+        isRefreshing,
+        isLoading
+    }
+}
+
+let receiveFeedList = (feeds) => {
+    return {
+        type: ActionTypes.RECEIVE_FEED_LIST,
+        feedList: feeds
+    }
+}
+
+export let fetchFeeds = (page, isLoadMore, isRefreshing, isLoading) => {
+
+    return dispatch => {
+
+        dispatch(fetchFeedList(isLoadMore, isRefreshing, isLoading))
+
+        Util.get(APIs.feeds(page), (json) => {
+            dispatch(receiveFeedList(json.feeds))
+        }, (error) => {
+            dispatch(receiveFeedList([]))
+        })
+    }
+
+}

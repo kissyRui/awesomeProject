@@ -19,5 +19,7 @@ export default keyMirror({
 
     // ----- 食物派App -----
     'FETCH_BANNER_LIST': null,
-    'RECEIVE_BANNER_LIST': null
+    'RECEIVE_BANNER_LIST': null,
+    'FETCH_FEED_LIST': null,
+    'RECEIVE_FEED_LIST': null
 })

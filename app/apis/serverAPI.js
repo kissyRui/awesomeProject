@@ -17,6 +17,10 @@ const APIs = {
 
     banners() {
         return this.url + '/home/banners'
+    },
+
+    feeds(page) {
+        return this.url + `/feeds?page=${page}&per=10`
     }
 
 }

@@ -130,7 +130,7 @@ class Index extends Component {
                     </View>
                 </TouchableOpacity>
             )
-            
+
         }
 
     }

@@ -43,7 +43,6 @@ class Root extends Component {
     }
 
     _configureScene = (route) => {
-        //return Navigator.SceneConfigs.FadeAndroid
         return  Navigator.SceneConfigs.HorizontalSwipeJump
     };
 
